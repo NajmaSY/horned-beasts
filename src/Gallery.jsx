@@ -1,5 +1,6 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
+// import hornedBeastsData from "./Data.json";
 
 function Gallery() {
   // add data later
