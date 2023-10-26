@@ -14,10 +14,26 @@ function App() {
     setShowModal(!showModal);
     setShownBeast(beast);
   }
+
+  const [horns, setHorns] = useState("");
+
+  function handleChange(event) {
+    setHorns(event.target.value);
+  }
+
   return (
     <div>
       <Header />
-      <Gallery data={data} handleShowModal={handleShowModal} />
+      <form>
+        <label>Select Number of Horns:</label>
+        <input
+          name="horns"
+          type="number"
+          onChange={handleChange}
+          value={horns}
+        />
+      </form>
+      <Gallery data={data} handleShowModal={handleShowModal} horns={horns} />
       <Footer />
       {showModal && (
         <SelectedBeast
@@ -30,3 +46,6 @@ function App() {
 }
 
 export default App;
+
+// need to keep track of the number of horns in state
+// give that number to the gallery to FILTER the array you are mapping through to show the HornedBeasts
