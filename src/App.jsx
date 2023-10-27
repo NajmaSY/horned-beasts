@@ -26,12 +26,14 @@ function App() {
       <Header />
       <form>
         <label>Select Number of Horns:</label>
-        <input
-          name="horns"
-          type="number"
-          onChange={handleChange}
-          value={horns}
-        />
+        <select onChange={handleChange}>
+          <option value="">All</option>
+          <option value="1">1 Horns</option>
+          <option value="2">2 Horns</option>
+          <option value="3">3 Horns</option>
+          <option value="100">100 horns</option>
+        </select>
+        <p>Number of Horns: {horns}</p>
       </form>
       <Gallery data={data} handleShowModal={handleShowModal} horns={horns} />
       <Footer />
